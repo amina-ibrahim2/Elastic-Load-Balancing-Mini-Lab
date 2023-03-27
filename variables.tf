@@ -50,3 +50,10 @@ variable "my-test-private-subnet-az3_cidr" {
   description = "private app subnet az3 cidr block"
   type        = string
 }
+
+
+#Security-groups variables 
+variable "ssh_location" {
+  description = "ip address that can ssh into server"
+  type        = string
+}

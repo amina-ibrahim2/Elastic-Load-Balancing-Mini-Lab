@@ -11,6 +11,8 @@ my-test-private-subnet-az1_cidr = "10.0.5.0/24"
 my-test-private-subnet-az2_cidr = "10.0.6.0/24"
 my-test-private-subnet-az3_cidr = "10.0.8.0/24"
 
+#Security-groups variables 
+ssh_location= "107.208.135.39/32"
 
 
 
