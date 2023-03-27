@@ -5,6 +5,8 @@ environment                     = "lab"
 # VPC Variables 
 vpc_cidr                        = "10.0.0.0/16"
 my-test-public-subnet-az-1_cidr = "10.0.1.0/24"
+my-test-public-subnet-az-2_cidr = "10.0.2.0/24"
+my-test-public-subnet-az-3_cidr = "10.0.3.0/24"
 my-test-private-subnet-az1_cidr = "10.0.5.0/24"
 my-test-private-subnet-az2_cidr = "10.0.6.0/24"
 my-test-private-subnet-az3_cidr = "10.0.8.0/24"

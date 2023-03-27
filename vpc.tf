@@ -33,6 +33,30 @@ resource"aws_subnet" "my-test-public-subnet-az-1" {
     }
 }
 
+# Create public subnet AZ2
+resource"aws_subnet" "my-test-public-subnet-az-2" {
+    vpc_id            = aws_vpc.my-test-vpc.id
+    cidr_block        = var.my-test-public-subnet-az-2_cidr
+    availability_zone = data.aws_availability_zones.availability_zones.names[1]
+    map_public_ip_on_launch = true
+
+    tags     = {
+        Name = "${var.project_name}-${var.environment}-public-az2"
+    }
+}
+
+# Create public subnet AZ3
+resource"aws_subnet" "my-test-public-subnet-az-3" {
+    vpc_id            = aws_vpc.my-test-vpc.id
+    cidr_block        = var.my-test-public-subnet-az-3_cidr
+    availability_zone = data.aws_availability_zones.availability_zones.names[2]
+    map_public_ip_on_launch = true
+
+    tags     = {
+        Name = "${var.project_name}-${var.environment}-public-az3"
+    }
+}
+
 # Create Route Table and add public route
 resource"aws_route_table" "my_public_route_table" {
     vpc_id  = aws_vpc.my-test-vpc.id
@@ -50,6 +74,18 @@ resource"aws_route_table" "my_public_route_table" {
 # Associate public subnet az1 to "pulic route table"
 resource"aws_route_table_association" "public_subnet_az1_rt_association" {
     subnet_id      = aws_subnet.my-test-public-subnet-az-1.id
+    route_table_id = aws_route_table.my_public_route_table.id
+}
+
+# Associate public subnet az2 to "pulic route table"
+resource"aws_route_table_association" "public_subnet_az2_rt_association" {
+    subnet_id      = aws_subnet.my-test-public-subnet-az-2.id
+    route_table_id = aws_route_table.my_public_route_table.id
+}
+
+# Associate public subnet az3 to "pulic route table"
+resource"aws_route_table_association" "public_subnet_az3_rt_association" {
+    subnet_id      = aws_subnet.my-test-public-subnet-az-3.id
     route_table_id = aws_route_table.my_public_route_table.id
 }
 # Create private app subnet az1

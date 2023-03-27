@@ -26,6 +26,16 @@ variable "my-test-public-subnet-az-1_cidr" {
   type        = string
 }
 
+variable "my-test-public-subnet-az-2_cidr" {
+  description = "public subnet az2 cidr block"
+  type        = string
+}
+
+variable "my-test-public-subnet-az-3_cidr" {
+  description = "public subnet az3 cidr block"
+  type        = string
+}
+
 variable "my-test-private-subnet-az1_cidr" {
   description = "private app subnet az1 cidr block"
   type        = string
